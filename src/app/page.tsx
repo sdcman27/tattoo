@@ -1,65 +1,64 @@
-import Image from "next/image";
+import Hero from "@/components/home/Hero";
+import ArtistsHighlight from "@/components/home/ArtistsHighlight";
+import StylesStrip from "@/components/home/StylesStrip";
 
-export default function Home() {
+const perks = [
+  {
+    title: "Sterile & safe",
+    body: "Hospital-grade sterilization, single-use needles, and a dedicated aftercare plan for every client.",
+  },
+  {
+    title: "Collaborative consults",
+    body: "We sketch with you in the studio or virtually to dial in composition, placement, and palette.",
+  },
+  {
+    title: "Flexible booking",
+    body: "Online requests, SMS follow-ups, and weekend availability for large projects.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Hero />
+      <StylesStrip />
+      <ArtistsHighlight />
+      <section className="bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-zinc-500">
+                Our philosophy
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold text-zinc-900">
+                A studio built for intentional work.
+              </h2>
+              <p className="mt-4 text-lg text-zinc-600">
+                Every piece is custom, never flash-from-the-wall. We pair thoughtful design with open communication so you always
+                know what to expect before the needle touches skin.
+              </p>
+              <div className="mt-8 grid gap-6 sm:grid-cols-2">
+                {perks.map((perk) => (
+                  <div key={perk.title} className="rounded-2xl border border-zinc-200 p-5">
+                    <p className="text-lg font-semibold text-zinc-900">{perk.title}</p>
+                    <p className="mt-2 text-sm text-zinc-600">{perk.body}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-3xl border border-zinc-200 p-2 shadow-inner">
+              <div className="relative h-[420px] overflow-hidden rounded-3xl">
+                <iframe
+                  title="Map to Ink & Ember"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.880481468859!2d-122.67620722357352!3d45.523064832192095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a02ff1a1d0f%3A0xab2342!2sPearl%20District%2C%20Portland%2C%20OR!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                  loading="lazy"
+                  className="h-full w-full"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
