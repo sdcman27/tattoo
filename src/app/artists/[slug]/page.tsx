@@ -5,8 +5,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 
 interface ArtistPageProps {
-  params: { slug: string };
-  searchParams: Record<string, string | string[] | undefined>;
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
 export async function generateStaticParams() {
@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ArtistPageProps): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const artist = getArtistBySlug(slug);
 
   if (!artist) {
@@ -27,14 +27,15 @@ export async function generateMetadata({ params }: ArtistPageProps): Promise<Met
   };
 }
 
-const ArtistDetailPage = ({ params, searchParams }: ArtistPageProps) => {
-  const { slug } = params;
+const ArtistDetailPage = async ({ params, searchParams }: ArtistPageProps) => {
+  const { slug } = await params;
   const artist = getArtistBySlug(slug);
   if (!artist) {
     notFound();
   }
 
-  const rawArtistParam = searchParams?.artist;
+  const resolvedSearchParams = (await searchParams) ?? {};
+  const rawArtistParam = resolvedSearchParams?.artist;
   const preselected = Array.isArray(rawArtistParam)
     ? rawArtistParam[0]
     : rawArtistParam ?? artist.name;

@@ -7,11 +7,13 @@ export const metadata: Metadata = {
 };
 
 interface BookingPageProps {
-  searchParams: Record<string, string | string[] | undefined>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
-const BookingPage = ({ searchParams }: BookingPageProps) => {
-  const preselectedArtist = typeof searchParams.artist === "string" ? searchParams.artist : undefined;
+const BookingPage = async ({ searchParams }: BookingPageProps) => {
+  const resolvedSearchParams = (await searchParams) ?? {};
+  const preselectedArtist =
+    typeof resolvedSearchParams.artist === "string" ? resolvedSearchParams.artist : undefined;
 
   return (
     <section className="bg-zinc-50 py-20">
