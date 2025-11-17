@@ -1,0 +1,23 @@
+// Example Prisma schema to support a persistent booking workflow.
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Booking {
+  id               String   @id @default(cuid())
+  name             String
+  email            String
+  phone            String
+  artist           String
+  preferredDate    String
+  style            String
+  referenceUrl     String?
+  status           String   @default("pending")
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
