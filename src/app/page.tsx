@@ -50,7 +50,7 @@ export default function HomePage() {
               <div className="relative h-[420px] overflow-hidden rounded-3xl">
                 <iframe
                   title="Map to Ink & Ember"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.880481468859!2d-122.67620722357352!3d45.523064832192095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54950a02ff1a1d0f%3A0xab2342!2sPearl%20District%2C%20Portland%2C%20OR!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3066.018464787823!2d-79.90084652471041!3d40.86117502804177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8832d0976bd158b5%3A0xfa667a7d89f5cb1!2sDowntown%20Butler%2C%20Butler%2C%20PA%2016001!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
                   loading="lazy"
                   className="h-full w-full"
                 />
