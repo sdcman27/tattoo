@@ -55,7 +55,7 @@ export const artists: Artist[] = [
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80",
       "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=80",
-      "https://images.unsplash.com/photo-1501869150797-9bbb64f782cd?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=80",
     ],
     availability: "Waitlist open",
   },
