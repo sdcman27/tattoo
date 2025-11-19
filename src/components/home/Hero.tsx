@@ -6,14 +6,15 @@ const Hero = () => {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-24 sm:px-6 lg:px-8 lg:grid-cols-2 lg:items-center">
         <div>
           <p className="text-sm uppercase tracking-[0.3em] text-zinc-400">
-            Portland, Oregon
+            Butler, Pennsylvania
           </p>
           <h1 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
             Ink &amp; Ember Tattoo Studio
           </h1>
           <p className="mt-6 text-lg text-zinc-200">
-            Custom tattoos crafted with intention. Meet our award-winning artists,
-            explore our gallery, and reserve your next session online.
+            Custom tattoos crafted with intention for the Butler community. Meet
+            our award-winning artists, explore our gallery, and reserve your next
+            session online.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link

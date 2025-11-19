@@ -8,9 +8,9 @@ const Footer = () => {
           <div>
             <p className="text-lg font-semibold">Ink &amp; Ember Tattoo Studio</p>
             <p className="mt-2 text-sm text-zinc-600">
-              221 Firefly Ave, Suite B, Portland, OR
+              124 W Jefferson St, Suite B, Butler, PA 16001
             </p>
-            <p className="text-sm text-zinc-600">(503) 555-7123</p>
+            <p className="text-sm text-zinc-600">(724) 555-7123</p>
           </div>
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-zinc-500">
